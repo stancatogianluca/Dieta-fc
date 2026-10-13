@@ -15,3 +15,19 @@
 
 /* Spesa intelligente 4.6 */
 .s46summary{display:flex;justify-content:space-between;gap:12px;margin:14px 0 8px;color:#173449}.s46progress{height:12px;background:#dceef8;border-radius:99px;overflow:hidden;margin-bottom:16px}.s46progress>div{height:100%;background:#208bbd;border-radius:99px;transition:width .2s}.s46row{background:#fff;border:1px solid #cde7f5;border-radius:17px;padding:15px;margin:10px 0;box-shadow:0 2px 10px #bdddec30}.s46row.s46done{background:#f0f8fb;opacity:.72}.s46check{display:flex;align-items:center;gap:13px;cursor:pointer}.s46check input{width:26px;height:26px;min-width:26px;accent-color:#208bbd}.s46check span{display:flex;flex-direction:column;gap:5px;min-width:0}.s46check strong{font-size:16px}.s46check small{font-size:13px;color:#527b90}.s46done .s46check strong{text-decoration:line-through}.s46details{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:12px 0 0 39px;color:#5b7e92;font-size:12px;flex-wrap:wrap}.s46details label,.s46ownedrow label{display:flex;align-items:center;gap:6px}.s46details input,.s46ownedrow input{width:75px;min-height:42px;border:1px solid #c1ddec;border-radius:10px;padding:7px;color:#173449;font-size:16px;background:white}.s46owned{margin-top:20px;background:#e5f4fc;padding:12px;border-radius:14px}.s46owned summary{cursor:pointer;font-weight:700}.s46ownedrow{display:flex;flex-direction:column;gap:8px;padding:12px 4px;border-bottom:1px solid #cde7f5}.s46ownedrow small{color:#527b90}.s46empty{padding:24px;text-align:center;background:#e5f4fc;border-radius:15px}
+
+/* Dieta FC 4.8 */
+#v48plan{margin:20px 0;border-top:1px solid #d2e7f3;padding-top:14px}
+.v48meal{background:#fff;border:1px solid #dcecf5;border-radius:15px;padding:13px;margin:10px 0}
+.v48meal strong{display:block;color:#174a65}
+.v48meal>small{display:block;color:#51829a;margin-top:5px}
+.v48meal p{font-size:13px;line-height:1.5;color:#41677b;margin:9px 0}
+.v48actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.v48actions button{font-size:12px;padding:9px 12px}
+.v48dialog{max-width:min(94vw,550px);width:94%;max-height:85vh;overflow:auto}
+.v48dialog label{display:block;margin:12px 0}
+.v48dialog input,.v48dialog select{min-width:0;max-width:100%;border:1px solid #b7d7e9;border-radius:8px;padding:9px;background:white;color:#173449}
+.v48food{display:grid;grid-template-columns:minmax(0,1fr) 76px 24px 34px;gap:5px;align-items:center;margin:8px 0}
+.v48food input{width:76px}
+.v48food button{padding:6px}
+.v48buy{width:100%;margin-top:12px;min-height:40px}
