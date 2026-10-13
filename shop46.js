@@ -19,5 +19,5 @@ root.innerHTML='<div class="s46summary"><strong>'+done+' di '+active.length+' pr
 root.onchange=e=>{const el=e.target;if(el.dataset.bought!==undefined){checked[el.dataset.bought]=el.checked;save();render();return}if(el.dataset.stock!==undefined){const v=Number(el.value);if(el.value.trim()===''||!Number.isFinite(v)||v<0){alert('Inserisci una quantità valida.');render();return}V()?.setStock(el.dataset.stock,v);const oldChecks=read('fc_shop_v1');delete oldChecks[el.dataset.stock];localStorage.setItem('fc_shop_v1',JSON.stringify(oldChecks));render()}};
 }
 window.FC_SHOP46={render,clearChecks(){checked={};save();render()}};
-document.addEventListener('fc-swap-changed',()=>{if(!$('#shop')?.hidden)render()});
+document.addEventListener('fc-swap-changed',()=>{if(!$('#shop')?.hidden)render()});document.addEventListener('fc-pantry-changed',()=>{if(!$('#shop')?.hidden)render()});
 })();
