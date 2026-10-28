@@ -11,7 +11,7 @@ const PACK_KEY='fc_shop_packs_v1',packs=read(PACK_KEY),defaults={
 'Riso basmati':{size:1000,label:'confezioni da 1 kg'},
 'Banana':{size:120,label:'banane'},
 'Couscous':{size:500,label:'scatole da 500 g'},
-'Bistecca di manzo':{size:180,label:'bistecche'},
+'Bistecca di manzo':{size:200,label:'bistecche'},
 'Hamburger di scottona':{size:150,label:'hamburger'},
 'Passata di pomodoro':{size:700,label:'bottiglie da 700 g'}
 };
