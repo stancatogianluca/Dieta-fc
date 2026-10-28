@@ -106,3 +106,17 @@ input,select{font-family:inherit}
 #homecontent .v4next .muted{color:#71877d}
 footer{color:#e7efe9}
 @media(max-width:500px){.wrap{padding-left:12px;padding-right:12px}header{padding-left:9px;padding-right:9px}header .bubble{display:none}.tabs{margin-left:-3px;margin-right:-3px}.tabs button{padding:11px 12px}#homecontent .v4hero{padding:22px 20px 14px}#homecontent .v4next{padding:19px 20px}#homecontent .v4quick{flex-direction:column}#homecontent .v4quick button{min-width:0}}
+
+/* Contrasto e leggibilità archivio alimenti */
+#foods{background:#fff;color:#18372e;border-radius:24px;padding:22px 20px;box-shadow:0 10px 28px #071c1933}
+#foods h2,#foods h3,#foods p,#foods label,#foods strong,#foods small{color:#18372e}
+#foods .muted{color:#596d64}
+#foods input,#foods select,#foods textarea{background:#fff;color:#17352d;border:1px solid #bdcfc5}
+/* Vista dispensa */
+#pantry{background:#fff;color:#17372c;border-radius:24px;padding:22px 18px;box-shadow:0 10px 28px #071c1933}
+#pantry h2{color:#14523e}#pantry .muted{color:#62766d}
+.pantry-summary{background:#e8f4ec;padding:13px 15px;border-radius:14px;margin:12px 0;color:#14523e}
+.pantry-row{background:#f8fbf9;border:1px solid #e0eae4;border-radius:16px;padding:14px;margin:10px 0;display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}
+.pantry-row strong{display:block;color:#193c30}.pantry-row small{display:block;color:#59786a;margin-top:5px}
+.pantry-row label{font-size:12px;color:#345c4c}.pantry-row input{display:block;width:130px;max-width:100%;background:#fff;color:#153c2b;border:1px solid #b8d1c3;border-radius:10px;padding:10px;margin-top:5px}
+.pantry-empty{padding:24px;text-align:center;background:#f4f9f5;border-radius:16px;color:#476b58}
