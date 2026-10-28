@@ -52,7 +52,21 @@ el.onclick=e=>{if(e.target.closest('#s46clear')){if(!confirm('Svuotare tutta la 
 el.onchange=e=>{const input=e.target;if(input.dataset.pack!==undefined){const n=Number(input.value);if(input.value.trim()===''||!Number.isFinite(n)||n<0){alert('Formato non valido.');render();return}if(n===0)delete packs[input.dataset.pack];else packs[input.dataset.pack]={size:n,label:'confezioni'};localStorage.setItem(PACK_KEY,JSON.stringify(packs));render();return}if(input.dataset.stock===undefined)return;const n=Number(input.value);if(input.value.trim()===''||!Number.isFinite(n)||n<0){alert('Inserisci una quantità valida.');render();return}V()?.setStock(input.dataset.stock,toStock(input.dataset.stock,n));const legacy=read('fc_shop_v1');delete legacy[input.dataset.stock];localStorage.setItem('fc_shop_v1',JSON.stringify(legacy));render()};
 }
 function missing(){const stock=V()?.pantry()||{};return Object.entries(quantity()).map(([k,need])=>{const ix=k.lastIndexOf('|'),name=k.slice(0,ix),unit=k.slice(ix+1),have=Math.max(0,Number(stock[k])||0),buy=Math.max(0,need-have),p=packFor(k);return {name,unit,need,have,buy,packs:liquid(k)?null:p&&p.size>0?packCount(buy,p):null,packLabel:p?.label||'confezioni',display:buying({k,buy})}}).filter(x=>x.buy>0.001).sort((a,b)=>a.name.localeCompare(b.name,'it'))}
-window.FC_SHOP46={render,missing,clearChecks(){checked={};save();render()}};
+function renderPantry(){
+ const el=document.querySelector('#pantrycontent');if(!el)return;
+ const stock=V()?.pantry()||{};
+ const rows=Object.entries(stock).filter(([k,v])=>Number(v)>0&&k.includes('|')).sort((a,b)=>a[0].localeCompare(b[0],'it'));
+ el.innerHTML='<div class="pantry-summary"><strong>'+rows.length+' prodotti disponibili</strong></div>'+(rows.length?rows.map(([k,v])=>{
+ const ix=k.lastIndexOf('|'),name=k.slice(0,ix),p=packFor(k),isLiquid=liquid(k);
+ const unit=isLiquid?'L':p&&p.size>0?p.label||'confezioni':k.slice(ix+1);
+ const factor=isLiquid?litreSize(k):p&&p.size>0?p.size:1;
+ const value=Number((Number(v)/factor).toFixed(3));
+ return '<article class="pantry-row"><div><strong>'+esc(name)+'</strong><small>'+displayQty(k,Number(v))+' disponibili</small></div><label>Quantità ('+esc(unit)+')<input type="text" inputmode="decimal" data-pantry-key="'+esc(k)+'" data-pantry-factor="'+factor+'" value="'+value+'" aria-label="Quantità '+esc(name)+'"></label></article>'
+ }).join(''):'<div class="pantry-empty">La dispensa è vuota. Aggiungi i prodotti dalla sezione Spesa.</div>');
+ el.onchange=e=>{const input=e.target.closest('[data-pantry-key]');if(!input)return;const raw=input.value.trim().replace(',','.');const n=Number(raw);if(!raw||!Number.isFinite(n)||n<0||n>100000){alert('Inserisci una quantità valida (0 per esaurito).');renderPantry();return}V()?.setStock(input.dataset.pantryKey,n*Number(input.dataset.pantryFactor));renderPantry()};
+}
+document.addEventListener('fc-pantry-changed',()=>{if(!document.querySelector('#pantry')?.hidden)renderPantry()});
+window.FC_SHOP46={render,renderPantry,missing,clearChecks(){checked={};save();render()}};
 document.addEventListener('fc-swap-changed',()=>{if(!document.querySelector('#shop')?.hidden)render()});
 document.addEventListener('fc-pantry-changed',()=>{if(!document.querySelector('#shop')?.hidden)render()});
 document.addEventListener('fc-plan-changed',()=>{if(!document.querySelector('#shop')?.hidden)render()});
