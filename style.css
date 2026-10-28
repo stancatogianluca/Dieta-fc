@@ -58,3 +58,51 @@
 #shopping .v48buy{background:#e7f5fb;border:1px solid #a9d9ed;color:#166b95;border-radius:12px;font-weight:800;padding:12px;min-height:46px}
 #shopping .v48buy:hover{background:#d7eff9}
 @media(max-width:480px){#shopping .s46summary{padding:18px 15px;gap:8px}#shopping .s46summary strong{font-size:16px}#shopping .s46summary span{font-size:11px}#shopping .s46row{padding:15px}#shopping .s46details{align-items:flex-start}#shopping .s46details label{max-width:100%}}
+
+
+/* Dieta FC 5.1 — modern food dashboard */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
+:root{--fc-ink:#142725;--fc-green:#146b51;--fc-mint:#e5f5eb;--fc-orange:#e96b36}
+html{background:#10221e}
+body{font-family:'DM Sans',system-ui,-apple-system,sans-serif;color:var(--fc-ink);background:linear-gradient(180deg,rgba(8,27,23,.43),rgba(13,34,29,.72)),url('https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1400&q=85') center top/cover fixed no-repeat;min-height:100dvh}
+.wrap{max-width:790px;padding:env(safe-area-inset-top) 18px calc(35px + env(safe-area-inset-bottom))}
+h1,h2,h3,.v4hero h2{font-family:'Outfit','DM Sans',sans-serif;letter-spacing:-.035em}
+header{padding:25px 4px 12px;color:#fff}
+header h1{font-size:clamp(30px,6vw,43px);font-weight:800;letter-spacing:-.045em;margin:4px 0}
+header small{color:#d5f0e4;font-size:11px;letter-spacing:2.5px}
+header p{color:#e2eee9;font-size:13px}
+header .bubble{background:rgba(255,255,255,.15);backdrop-filter:blur(12px);border:1px solid #ffffff45;border-radius:20px}
+.tabs{position:sticky;top:6px;z-index:30;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;background:rgba(18,34,31,.9);backdrop-filter:blur(18px);border:1px solid #ffffff2b;border-radius:22px;padding:7px;margin:15px 0 22px;box-shadow:0 14px 35px #071a1840}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{flex:0 0 auto;background:transparent;color:#e4ece8;border:0;border-radius:15px;padding:12px 13px;font-size:12px;white-space:nowrap}
+.tabs .active{background:#185f47;color:white;border:0;box-shadow:0 4px 12px #051c1640}
+section:not([hidden]){animation:fcFade .2s ease}
+@keyframes fcFade{from{opacity:.7;transform:translateY(4px)}to{opacity:1;transform:none}}
+#homecontent .v4hero{background:rgba(246,250,246,.95);border:1px solid #ffffffb8;border-radius:28px 28px 0 0;padding:26px 25px 16px;color:#173c31;box-shadow:0 20px 45px #061f1a30}
+#homecontent .v4hero small{font-size:12px;color:#66887b;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+#homecontent .v4hero h2{font-size:clamp(26px,5vw,38px);margin:9px 0 3px;color:#134f3e;font-weight:800}
+#homecontent .v4hero p{color:#698479;margin:0;font-size:14px}
+#homecontent .v4next{background:rgba(249,251,248,.96);border:1px solid #ffffffbd;border-radius:0 0 28px 28px;padding:23px 25px;box-shadow:0 20px 45px #061f1a30;margin:0 0 20px;color:#20332d}
+#homecontent .v4next h3{font-family:'Outfit',sans-serif;color:#135e49;font-size:23px;margin:0 0 8px}
+#homecontent .v4next strong{font-size:17px}
+#homecontent .v4next ul{list-style:none;padding:0;margin:15px 0 5px}
+#homecontent .v4next li{display:flex;justify-content:space-between;gap:12px;padding:12px 2px;border-bottom:1px solid #dce9e2;font-size:14px}
+#homecontent .v4next li b{color:#0b654a;white-space:nowrap}
+#homecontent .v4next li:last-child{border-bottom:0}
+#homecontent .v4quick{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 20px}
+#homecontent .v4quick button,#homecontent .v4next button{background:linear-gradient(125deg,#0e5944,#21835f);border:0;border-radius:16px;padding:15px 18px;color:#fff;font-family:'DM Sans',sans-serif;font-weight:800;box-shadow:0 7px 18px #0a473633}
+#homecontent .v4quick button{flex:1;min-width:165px}
+#homecontent .v4next:has(h3:first-child) + .v4quick{margin-top:10px}
+#homecontent .v4quick + .v4next{border-radius:26px;padding:25px;background:rgba(255,249,244,.96)}
+#homecontent .v4quick + .v4next h3{color:#bc4c29}
+#homecontent .v4quick + .v4next li b{color:#c44c28}
+#homecontent .v4quick + .v4next button{background:linear-gradient(125deg,#e66b35,#ec8c48)}
+#menu .meal,#shopping .s46row,#calendar .v48meal,#foods article,#settings .note,#info .note{border-radius:20px;background:rgba(255,255,255,.96);box-shadow:0 10px 25px #051e1925;border-color:#e4ede8}
+.daybar,.totals,#shopping .s46summary{background:linear-gradient(115deg,#155b48,#248b68);color:#fff;border-radius:20px}
+.daybar #daytype,.totals strong{color:#e7f5ed}
+#shopping .s46summary strong,#shopping .s46summary span{color:white}
+.secondary{border-color:#c4e3d4;color:#126449}
+input,select{font-family:inherit}
+#homecontent .v4next .muted{color:#71877d}
+footer{color:#e7efe9}
+@media(max-width:500px){.wrap{padding-left:12px;padding-right:12px}header{padding-left:9px;padding-right:9px}header .bubble{display:none}.tabs{margin-left:-3px;margin-right:-3px}.tabs button{padding:11px 12px}#homecontent .v4hero{padding:22px 20px 14px}#homecontent .v4next{padding:19px 20px}#homecontent .v4quick{flex-direction:column}#homecontent .v4quick button{min-width:0}}
